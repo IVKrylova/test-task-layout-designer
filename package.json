@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "gulp-cli": "^2.3.0"
+  },
+  "name": "test-task",
+  "version": "1.0.0",
+  "description": "test task for Studik",
+  "main": "index.js",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "IVKrylova",
+  "license": "ISC"
+}
