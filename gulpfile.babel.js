@@ -1,17 +1,17 @@
 import gulp from 'gulp';
-import { path } from './gulp/config/path';
-import { copy } from './gulp/tasks/copy';
-import { reset } from './gulp/tasks/reset';
-import { html } from './gulp/tasks/html';
-import { plugins } from './gulp/config/plugins';
-import { server } from './gulp/tasks/server';
-import { scss } from './gulp/tasks/scss';
-import { js } from './gulp/tasks/js';
-import { images } from './gulp/tasks/images';
-import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts';
-import { svgSprite } from './gulp/tasks/svgSprite';
-import { zip } from './gulp/tasks/zip';
-import { ftp } from './gulp/tasks/ftp';
+import { path } from './gulp/config/path.js';
+import { copy } from './gulp/tasks/copy.js';
+import { reset } from './gulp/tasks/reset.js';
+import { html } from './gulp/tasks/html.js';
+import { plugins } from './gulp/config/plugins.js';
+import { server } from './gulp/tasks/server.js';
+import { scss } from './gulp/tasks/scss.js';
+import { js } from './gulp/tasks/js.js';
+import { images } from './gulp/tasks/images.js';
+import { otfToTtf, ttfToWoff, fontsStyle } from './gulp/tasks/fonts.js';
+import { svgSprite } from './gulp/tasks/svgSprite.js';
+import { zip } from './gulp/tasks/zip.js';
+import { ftp } from './gulp/tasks/ftp.js';
 
 // передаем значения в глобальную переменную
 global.app = {
@@ -44,7 +44,7 @@ const deployZip = gulp.series(reset, mainTask, zip);
 const deployFTP = gulp.series(reset, mainTask, ftp);
 
 // выполнение сценариев по умолчанию
-gulp.task('default', copy);
+gulp.task('default', dev);
 
 // экспорт сценариев
 export { svgSprite, dev, build, deployZip, deployFTP }

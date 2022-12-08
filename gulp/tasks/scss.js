@@ -39,7 +39,7 @@ export const scss = () => {
         cascade: true,
       })
     ))
-    .pipe(app.gulp.dest(aPP.path.build.css))
+    .pipe(app.gulp.dest(app.path.build.css))
     .pipe(app.plugins.if(
       app.isBuild,
       cleanCss()
