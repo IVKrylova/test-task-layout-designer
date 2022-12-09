@@ -22,5 +22,4 @@ export default class MenuItem {
 
     return this._element;
   }
-
 }

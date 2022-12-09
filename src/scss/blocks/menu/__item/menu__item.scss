@@ -1,0 +1,19 @@
+@import '../../../utils/mixins';
+
+@include media_1045 {
+  .menu__item:last-child {
+    display: none;
+  }
+}
+
+@include media_850 {
+  .menu__item:nth-child(8) {
+    display: none;
+  }
+}
+
+@include media_720 {
+  .menu__item:nth-child(7) {
+    display: none;
+  }
+}

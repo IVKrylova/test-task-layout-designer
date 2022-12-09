@@ -34,5 +34,4 @@ const createMenu = (data) => {
 
   return menu;
 }
-
-createMenu(menuList)
+createMenu(menuList);

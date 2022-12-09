@@ -12,7 +12,3 @@ export const isWebp = () => {
     document.documentElement.classList.add(className);
   });
 }
-
-export const clientWidth = () => {
-  return document.documentElement.clientWidth;
-}

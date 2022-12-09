@@ -11,10 +11,7 @@ export const menuList = [
   'Тест на профориентацию'
 ];
 
-
 // селекторы
 export const itemMenuSelector = '.menu__item';
 export const menuSelector = '.menu__list';
 export const templateMenuItemSelector = '#template-menu-item';
-
-// элементы

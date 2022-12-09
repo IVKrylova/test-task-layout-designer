@@ -10,8 +10,29 @@
   }
 }
 
+// ToDo: удалить после реализации скролла в меню
+@mixin media_1045 {
+  @media screen and (max-width: 1045px) {
+    @content;
+  }
+}
+
 @mixin media_980 {
   @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+
+// ToDo: удалить после реализации скролла в меню
+@mixin media_850 {
+  @media screen and (max-width: 850px) {
+    @content;
+  }
+}
+
+// ToDo: удалить после реализации скролла в меню
+@mixin media_720 {
+  @media screen and (max-width: 720px) {
     @content;
   }
 }
