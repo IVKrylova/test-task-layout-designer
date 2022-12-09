@@ -1,0 +1,11 @@
+@import '../../../../utils/constants';
+
+.popup__button_active {
+  color: $buttonActiveText;
+  background-color: #0656B4;
+}
+
+.popup__button_active:hover {
+  cursor: pointer;
+  opacity: .9;
+}

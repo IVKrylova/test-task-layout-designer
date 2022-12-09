@@ -1,0 +1,9 @@
+@import '../../../utils/mixins';
+@import '../../../utils/constants';
+
+.badge__text {
+  margin: 0;
+  padding: 0;
+  @include fontInHeader;
+  color: $textContent;
+}

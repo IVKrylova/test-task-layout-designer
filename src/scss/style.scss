@@ -30,3 +30,14 @@
 
 @import './blocks/mobile-menu/mobile-menu';
 @import './blocks/mobile-menu/__burger-menu/mobile-menu__burger-menu';
+
+@import './blocks/popup/popup';
+@import './blocks/popup/_opened/popup_opened';
+@import './blocks/popup/__container/popup__container';
+@import './blocks/popup/__button/popup__button';
+@import './blocks/popup/__button/_active/popup__button_active';
+@import './blocks/popup/__input/popup__input';
+@import './blocks/popup/__list-badge/popup__list-badge';
+@import './blocks/badge/badge';
+@import './blocks/badge/__button-delete/badge__button-delete';
+@import './blocks/popup/__list-city/popup__list-city';

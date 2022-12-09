@@ -1,0 +1,15 @@
+@import '../../../utils/constants';
+@import '../../../utils/mixins';
+
+.popup__list-city {
+  padding: 16px 0 0 0;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 15px 23px 25px 23px;
+  @include fontInHeader;
+  color: $textContent;
+  box-sizing: border-box;
+  border-top: 1px #D8D8D8 solid;
+  row-gap: 18px;
+}

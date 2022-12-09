@@ -15,3 +15,7 @@ export const menuList = [
 export const itemMenuSelector = '.menu__item';
 export const menuSelector = '.menu__list';
 export const templateMenuItemSelector = '#template-menu-item';
+export const popupLocationSelector = '#popup-location';
+
+// элементы
+export const location = document.querySelector('.location');

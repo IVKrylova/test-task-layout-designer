@@ -1,0 +1,13 @@
+.badge__button-delete {
+  border: none;
+  background-color: transparent;
+  background-image: url(../img/button-close.svg);
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+}
+
+.badge__button-delete:hover {
+  cursor: pointer;
+}

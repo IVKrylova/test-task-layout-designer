@@ -1,0 +1,16 @@
+@import '../../../utils/mixins';
+@import '../../../utils/constants';
+
+.popup__input {
+  margin: 24px 16px 0;
+  align-self: start;
+  padding: 13px 0 13px 25px;
+  border: 2px solid #ABC8EA;
+  border-radius: 100px;
+}
+
+.popup__input::placeholder {
+  @include fontInHeader;
+  font-family: $fontFamily;
+  color: $buttonDisabledText;
+}
