@@ -1,3 +1,21 @@
 @import './normalize.css';
 @import './fonts';
-@import './header/header';
+
+@import './blocks/page/page';
+
+@import './blocks/header/header';
+@import './blocks/header/__link-logo/header__link-logo';
+@import './blocks/logo/logo';
+@import './blocks/location/location';
+@import './blocks/location/__city/location__city';
+@import './blocks/location/__button/location__button';
+@import './blocks/search-form/search-form';
+@import './blocks/search-form/__button/search-form__button';
+@import './blocks/search-form/__input/search-form__input';
+@import './blocks/header/__account/header__account';
+@import './blocks/like-counter/like-counter';
+@import './blocks/like-counter/__icon-like/like-counter__icon-like';
+@import './blocks/like-counter/__count/like-counter__count';
+@import './blocks/header/__profile/header__profile';
+@import './blocks/header/__profile-name/header__profile-name';
+@import './blocks/header/__avatar/header__avatar';

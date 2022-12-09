@@ -1,0 +1,9 @@
+.location {
+  display: flex;
+  column-gap: 8px;
+  margin-top: 32px;
+}
+
+.location:hover {
+  cursor: pointer;
+}
