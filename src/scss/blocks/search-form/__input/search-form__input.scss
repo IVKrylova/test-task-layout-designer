@@ -16,3 +16,7 @@
   line-height: 1.57;
   color: $textPlaceholder;
 }
+
+.search-form__input:hover {
+  cursor: text;
+}

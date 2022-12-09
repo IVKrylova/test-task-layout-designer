@@ -1,6 +1,16 @@
+@import '../../utils/constants';
+
 .like-counter {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   column-gap: 10px;
+  padding: 9px 8px;
+  box-sizing: border-box;
+}
+
+.like-counter:hover {
+  cursor: pointer;
+  background-color: $hoverBackground;
+  border-radius: 37px;
 }
