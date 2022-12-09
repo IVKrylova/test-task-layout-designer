@@ -1,0 +1,17 @@
+@import '../../../utils/constants';
+@import '../../../utils/mixins';
+
+.menu__link {
+  text-decoration: none;
+  @include fontInHeader;
+  line-height: 1.4;
+  color: $textContent;
+  padding: 3px 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+}
+
+.menu__link:hover {
+  cursor: pointer;
+  color: $hoverText;
+}

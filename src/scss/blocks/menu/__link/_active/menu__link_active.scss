@@ -1,0 +1,6 @@
+@import '../../../../utils/constants';
+
+.menu__link_active {
+  background-color: $activeBackground;
+  border-radius: 34px;
+}

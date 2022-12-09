@@ -1,29 +1,31 @@
 <header class="header">
-  <a href="#" class="header__link-logo">
-    <img class="logo" src="@img/logo.svg" alt="Логотип Студика">
-  </a>
-  <div class="location">
-    <button type="button" aria-label="Кнопка выбрать город" class="location__button"></button>
-    <p class="location__city">Любой регион</p>
-  </div>
-  <form id="search-form" class="search-form">
-    <input type="text" class="search-form__input" placeholder="Учебное заведение, специальность или профессия">
-    <button type="submit" class="search-form__button" aria-label="Кнопка поиска учебного заведения, специальности или профессии"></button>
-  </form>
-  <div class="header__account">
-    <div class="like-counter">
-      <img src="@img/icon-like.svg" class="like-counter__icon-like" alt="Иконка лайк">
-      <p class="like-counter__count">1</p>
+  <div class="header__content">
+    <a href="#" class="header__link-logo">
+      <img class="logo" src="@img/logo.svg" alt="Логотип Студика">
+    </a>
+    <div class="location">
+      <button type="button" aria-label="Кнопка выбрать город" class="location__button"></button>
+      <p class="location__city">Любой регион</p>
     </div>
-    <div class="header__profile">
-      <p class="header__profile-name">Екатерина</p>
-      <img class="header__avatar" src="@img/avatar.png" alt="Аватар профиля">
+    <form id="search-form" class="search-form">
+      <input type="text" class="search-form__input" placeholder="Учебное заведение, специальность или профессия">
+      <button type="submit" class="search-form__button" aria-label="Кнопка поиска учебного заведения, специальности или профессии"></button>
+    </form>
+    <div class="header__account">
+      <div class="like-counter">
+        <img src="@img/icon-like.svg" class="like-counter__icon-like" alt="Иконка лайк">
+        <p class="like-counter__count">1</p>
+      </div>
+      <div class="header__profile">
+        <p class="header__profile-name">Екатерина</p>
+        <img class="header__avatar" src="@img/avatar.png" alt="Аватар профиля">
+      </div>
     </div>
   </div>
   <nav class="menu">
     <ul class="menu__list">
       <li>
-        <a href="#" class="menu__link">Вузы</a>
+        <a href="#" class="menu__link menu__link_active">Вузы</a>
       </li>
       <li>
         <a href="#" class="menu__link">Колледжи</a>
@@ -50,5 +52,6 @@
         <a href="#" class="menu__link">Тест на профориентацию</a>
       </li>
     </ul>
+    <button class="menu__button" type="button" aria-label="Кнопка стрелка вправо"></button>
   </nav>
 </header>

@@ -2,11 +2,8 @@
 @import '../../utils/mixins';
 
 .header {
+  width: 100%;
+  max-width: 1216px;
   font-family: $fontFamily;
   @include fontInHeader;
-  display: grid;
-  grid-template-areas:
-    'header__link-logo location search-form header__account'
-    'menu menu menu menu';
-  grid-template-columns: 8.5% 12.5% 49% 30%;
 }
