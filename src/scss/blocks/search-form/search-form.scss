@@ -1,5 +1,16 @@
+@import '../../utils/mixins';
+
 .search-form {
   width: 100%;
+  max-width: 592px;
   position: relative;
   margin: 0;
+
+  @include media_980 {
+    justify-self: center;
+  }
+
+  @include media_670 {
+    display: none;
+  }
 }

@@ -1,0 +1,10 @@
+@import '../../utils/mixins';
+
+.mobile-menu {
+  display: none;
+
+  @include media_670 {
+    display: block;
+    grid-area: mobile-menu;
+  }
+}

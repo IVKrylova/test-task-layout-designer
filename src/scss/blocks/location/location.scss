@@ -1,8 +1,13 @@
 @import '../../utils/constants';
+@import '../../utils/mixins';
 
 .location {
   display: flex;
   column-gap: 8px;
+
+  @include media_980 {
+    display: none;
+  }
 }
 
 .location:hover {

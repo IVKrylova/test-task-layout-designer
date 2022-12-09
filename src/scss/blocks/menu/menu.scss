@@ -1,5 +1,11 @@
+@import '../../utils/mixins';
+
 .menu {
   margin-top: 27px;
   position: relative;
   overflow: hidden;
+
+  @include media_670 {
+    display: none;
+  }
 }

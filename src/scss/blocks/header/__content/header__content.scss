@@ -1,5 +1,23 @@
+@import '../../../utils/mixins';
+
 .header__content {
   display: grid;
-  grid-template-columns: 8.5% 12.5% 49% 30%;
+  column-gap: 1%;
+  grid-template-columns: 8% 11% 62% 16%;
   align-items: center;
+
+  @include media_1190 {
+    grid-template-columns: 10% 11% 60% 13%;
+    column-gap: 2%;
+  }
+
+  @include media_980 {
+    grid-template-columns: 15% 69% 12%;
+  }
+
+  @include media_670 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "mobile-menu header__link-logo header__account";
+  }
 }
+

@@ -1,5 +1,15 @@
+@import '../../../utils/mixins';
+
 .header__account {
   display: flex;
   column-gap: 33px;
   justify-self: end;
+
+  @include media_1190 {
+    column-gap: 10px;
+  }
+
+  @include media_670 {
+    grid-area: header__account;
+  }
 }

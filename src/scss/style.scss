@@ -1,4 +1,4 @@
-@import './normalize.css';
+@import './normalize';
 @import './fonts';
 
 @import './blocks/page/page';
@@ -26,3 +26,6 @@
 @import './blocks/menu/__link/menu__link';
 @import './blocks/menu/__link/_active/menu__link_active';
 @import './blocks/menu/__button/menu__button';
+
+@import './blocks/mobile-menu/mobile-menu';
+@import './blocks/mobile-menu/__burger-menu/mobile-menu__burger-menu';

@@ -1,5 +1,14 @@
+@import '../../../utils/mixins';
+
 .header__link-logo {
   display: block;
+
+  @include media_670 {
+    grid-area: header__link-logo;
+    justify-self: center;
+    align-self: start;
+    margin-top: 5px;
+  }
 }
 
 .header__link-logo:hover {

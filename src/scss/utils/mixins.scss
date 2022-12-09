@@ -3,3 +3,21 @@
   font-size: 14px;
   line-height: 1.57;
 }
+
+@mixin media_1190 {
+  @media screen and (max-width: 1190px) {
+    @content;
+  }
+}
+
+@mixin media_980 {
+  @media screen and (max-width: 980px) {
+    @content;
+  }
+}
+
+@mixin media_670 {
+  @media screen and (max-width: 670px) {
+    @content;
+  }
+}
