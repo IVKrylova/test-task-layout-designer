@@ -2,14 +2,14 @@
   box-sizing: border-box;
   position: absolute;
   top: 5px;
-  right: 0;
+  right: 7px;
   border: none;
   background-color: #fff;
   background-image: url(../img/button-arrow-right.svg);
   width: 6px;
   height: 12px;
   background-repeat: no-repeat;
-  box-shadow: -15px 0px 25px 25px #fff;
+  box-shadow: 0 0 25px 25px #fff;
 }
 
 .menu__button:hover {
