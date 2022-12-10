@@ -18,6 +18,7 @@ import {
   templateCityListSelector,
   cityListSelector,
   formSearchCitySelector,
+  cityListElement,
 } from './modules/constants.js';
 
 // сжимаем изображения
@@ -92,8 +93,14 @@ location.addEventListener('click', () => {
   }
 });
 
+const getSearchCities = (searchCities, value) => {
+  if (searchCities) {
+    cityListElement.textContent = '';
+    createCityList(searchCities);
+  }
+}
+
 // поиск по городам
-const searchCityForm = new SearchForm(formSearchCitySelector, cityList);
+const searchCityForm = new SearchForm(formSearchCitySelector, cityList, getSearchCities);
 searchCityForm.setEventListener();
-
-
+getSearchCities();

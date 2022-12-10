@@ -24,3 +24,4 @@ export const formSearchCitySelector = '.form-search-city';
 // элементы
 export const location = document.querySelector('.location');
 export const preloader = document.querySelector('.preloader');
+export const cityListElement = document.querySelector('.popup__list-city');
