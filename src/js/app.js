@@ -51,6 +51,7 @@ createMenu(menuList);
 // рендер списка городов
 const popupLocation = new Popup(popupLocationSelector);
 const cityList = [];
+const areaList = [];
 let isLoading = false;
 
 const createCityList = (data, value) => {
@@ -61,6 +62,7 @@ const createCityList = (data, value) => {
         const elementItem = new CityItem(
           item,
           value,
+          areaList,
           itemCitySelector,
           templateCityListSelector,
         );
@@ -84,7 +86,10 @@ location.addEventListener('click', () => {
       .then(res => {
         res.forEach(el => {
           cityList.push({ name: el.name, type: el.type, id: el.id });
-          if (el.cities) el.cities.forEach(city => cityList.push(city));
+          if (el.cities) {
+            el.cities.forEach(city => cityList.push(city));
+            areaList.push({ name: el.name, id: el.id });
+          }
         });
         isLoading = true;
         preloader.classList.remove('preloader_visible');

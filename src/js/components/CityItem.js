@@ -1,11 +1,12 @@
 export default class CityItem {
-  constructor(item, value, itemSelector, elementTemplateSelector) {
+  constructor(item, value, areaList, itemSelector, elementTemplateSelector) {
     this._itemSelector = itemSelector;
     this._elementTemplateSelector = elementTemplateSelector;
     this._name = item.name;
     this._id = item.id;
     this._stateId = item.state_id;
     this._string = value;
+    this._areaList = areaList;
   }
 
   _getElementItem() {
@@ -23,6 +24,7 @@ export default class CityItem {
       const string = this._string.toLowerCase();
       const name = this._name.toLowerCase();
       const parts = name.split(string);
+
       // добавляем цвет буквам
       const text = parts.join(`<span class="popup__city-string">${string}</span>`);
       // добавляем заглавную букву в начале слова
@@ -33,8 +35,20 @@ export default class CityItem {
       const index = upperText.indexOf(' <') + 34;
       const newText = upperText.indexOf(' <') === -1
         ? upperText
-        : `${upperText.slice(0, index)}${upperText[index].toUpperCase()}${upperText.slice(index + 1)}`
-      this._element.innerHTML = newText;
+        : `${upperText.slice(0, index)}${upperText[index].toUpperCase()}${upperText.slice(index + 1)}`;
+
+      // добавляем регион
+      if (this._stateId) {
+        let area;
+        this._areaList.forEach(el => {
+          if (el.id === this._stateId) area = el.name;
+          return;
+        });
+        const textWithArea = `${newText}<span class="popup__city-area">${area}</span>`
+        this._element.innerHTML = textWithArea;
+      } else {
+        this._element.innerHTML = newText;
+      }
     }
 
     return this._element;
