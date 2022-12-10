@@ -1,0 +1,16 @@
+@import '../../../utils/constants';
+
+.popup__city-item {
+  color: $textContent;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.57;
+  padding: 9px 23px 9px 23px;
+  box-sizing: border-box;
+}
+
+.popup__city-item:hover {
+  cursor: pointer;
+  background-color: $activeBackground;
+}
