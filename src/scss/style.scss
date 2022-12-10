@@ -41,3 +41,8 @@
 @import './blocks/badge/badge';
 @import './blocks/badge/__button-delete/badge__button-delete';
 @import './blocks/popup/__list-city/popup__list-city';
+
+@import './blocks/preloader/preloader';
+@import './blocks/preloader/__container/preloader__container';
+@import './blocks/preloader/__round/preloader__round';
+@import './blocks/preloader/_visible/preloader_visible';

@@ -19,3 +19,4 @@ export const popupLocationSelector = '#popup-location';
 
 // элементы
 export const location = document.querySelector('.location');
+export const preloader = document.querySelector('.preloader');
