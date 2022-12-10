@@ -10,15 +10,15 @@
   overflow-y: scroll;
 }
 
-.popup__list-city::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 10px;
 }
 
-.popup__list-city::-webkit-scrollbar-track {
+::-webkit-scrollbar-track {
   background-color: #D8D8D8;
 }
 
-.popup__list-city::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
   background-color: #888;
 }
 
