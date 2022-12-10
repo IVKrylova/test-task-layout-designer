@@ -1,6 +1,9 @@
 <section class="popup" id="popup-location">
   <div class="popup__container">
-    <input type="text" class="popup__input" placeholder="Регион, город, населенный пункт">
+    <form class="form-search-city">
+      <input type="text" class="form-search-city__input" placeholder="Регион, город, населенный пункт">
+      <button type="reset" class="form-search-city__button-reset" aria-label="Кнопка очистить поле"></button>
+    </form>
     @@include('./preloader.html')
     <div class="popup__content">
       <ul class="popup__list-badge"></ul>

@@ -36,12 +36,16 @@
 @import './blocks/popup/__container/popup__container';
 @import './blocks/popup/__button/popup__button';
 @import './blocks/popup/__button/_active/popup__button_active';
-@import './blocks/popup/__input/popup__input';
 @import './blocks/popup/__list-badge/popup__list-badge';
 @import './blocks/badge/badge';
 @import './blocks/badge/__button-delete/badge__button-delete';
 @import './blocks/popup/__list-city/popup__list-city';
 @import './blocks/popup/__city-item/popup__city-item';
+
+@import './blocks/form-search-city/form-search-city';
+@import './blocks/form-search-city/__input/form-search-city__input';
+@import './blocks/form-search-city/__button-reset/form-search-city__button-reset';
+@import './blocks/form-search-city/__button-reset/_visible/form-search-city__button-reset_visible';
 
 @import './blocks/preloader/preloader';
 @import './blocks/preloader/__container/preloader__container';

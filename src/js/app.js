@@ -3,6 +3,7 @@ import Section from './components/Section.js';
 import MenuItem from './components/MenuItem.js';
 import Popup from './components/Popup.js';
 import CityItem from './components/CityItem.js';
+import SearchForm from './components/SearchForm.js';
 import { getCityList } from './modules/api.js';
 
 import {
@@ -16,6 +17,7 @@ import {
   itemCitySelector,
   templateCityListSelector,
   cityListSelector,
+  formSearchCitySelector,
 } from './modules/constants.js';
 
 // сжимаем изображения
@@ -45,7 +47,7 @@ const createMenu = (data) => {
 }
 createMenu(menuList);
 
-// функционал выбора города
+// рендер списка городов
 const popupLocation = new Popup(popupLocationSelector);
 const cityList = [];
 let isLoading = false;
@@ -90,6 +92,8 @@ location.addEventListener('click', () => {
   }
 });
 
-
+// поиск по городам
+const searchCityForm = new SearchForm(formSearchCitySelector, cityList);
+searchCityForm.setEventListener();
 
 

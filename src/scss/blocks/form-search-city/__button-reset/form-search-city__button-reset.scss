@@ -1,0 +1,18 @@
+.form-search-city__button-reset {
+  position: absolute;
+  top: 40px;
+  right: 35px;
+  box-sizing: border-box;
+  background-color: transparent;
+  background-image: url(../img/button-close.svg);
+  background-repeat: no-repeat;
+  border: none;
+  width: 14px;
+  height: 14px;
+  display: none;
+}
+
+.form-search-city__button-reset:hover {
+  cursor: pointer;
+  background-image: url(../img/button-close-hover.svg);
+}

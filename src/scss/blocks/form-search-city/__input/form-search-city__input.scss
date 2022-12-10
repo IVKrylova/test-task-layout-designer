@@ -1,7 +1,7 @@
 @import '../../../utils/mixins';
 @import '../../../utils/constants';
 
-.popup__input {
+.form-search-city__input {
   margin: 24px 16px 0;
   align-self: start;
   padding: 13px 0 13px 25px;
@@ -9,7 +9,7 @@
   border-radius: 100px;
 }
 
-.popup__input::placeholder {
+::placeholder {
   @include fontInHeader;
   font-family: $fontFamily;
   color: $buttonDisabledText;
