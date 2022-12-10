@@ -53,13 +53,14 @@ const popupLocation = new Popup(popupLocationSelector);
 const cityList = [];
 let isLoading = false;
 
-const createCityList = (data) => {
+const createCityList = (data, value) => {
   const cities = new Section(
     {
       items: data,
       renderer: (item) => {
         const elementItem = new CityItem(
           item,
+          value,
           itemCitySelector,
           templateCityListSelector,
         );
@@ -96,7 +97,7 @@ location.addEventListener('click', () => {
 const getSearchCities = (searchCities, value) => {
   if (searchCities) {
     cityListElement.textContent = '';
-    createCityList(searchCities);
+    createCityList(searchCities, value);
   }
 }
 
