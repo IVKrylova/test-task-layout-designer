@@ -1,0 +1,5 @@
+@import '../../../../utils/constants';
+
+.popup__city-item_active {
+  background-color: $activeBackground;
+}

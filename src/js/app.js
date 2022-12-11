@@ -4,6 +4,7 @@ import MenuItem from './components/MenuItem.js';
 import Popup from './components/Popup.js';
 import CityItem from './components/CityItem.js';
 import SearchForm from './components/SearchForm.js';
+import Badge from './components/Badge.js';
 import { getCityList } from './modules/api.js';
 
 import {
@@ -19,6 +20,10 @@ import {
   cityListSelector,
   formSearchCitySelector,
   cityListElement,
+  badgeSelector,
+  templateBadgeSelector,
+  badgesListSelector,
+  badgesListElement,
 } from './modules/constants.js';
 
 // сжимаем изображения
@@ -48,6 +53,55 @@ const createMenu = (data) => {
 }
 createMenu(menuList);
 
+// функционал бейджей
+const badges = [];
+
+const createBadgesList = (data) => {
+  const badges = new Section(
+    {
+      items: data,
+      renderer: (item) => {
+        const elementItem = new Badge(
+          item,
+          badgeSelector,
+          templateBadgeSelector,
+        );
+
+        return elementItem.generateBadge();
+      },
+    },
+    badgesListSelector,
+  );
+  badges.renderItems();
+
+  return badges;
+}
+
+const addBadge = city => {
+  if (city) badges.push(city);
+  badgesListElement.textContent = '';
+  createBadgesList(badges);
+}
+
+const deletBadge = city => {
+  if (city) {
+    const index = badges.indexOf(city);
+
+    if(badges.length === 1) {
+      badges.pop();
+    } else if (index === 0) {
+      badges.shift();
+    } else {
+      badges.splice(index, index);
+    }
+  };
+  badgesListElement.textContent = '';
+  createBadgesList(badges);
+}
+
+addBadge();
+deletBadge();
+
 // рендер списка городов
 const popupLocation = new Popup(popupLocationSelector);
 const cityList = [];
@@ -63,6 +117,8 @@ const createCityList = (data, value) => {
           item,
           value,
           areaList,
+          addBadge,
+          deletBadge,
           itemCitySelector,
           templateCityListSelector,
         );
