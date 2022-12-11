@@ -63,6 +63,8 @@ const createBadgesList = (data) => {
       renderer: (item) => {
         const elementItem = new Badge(
           item,
+          deleteBadge,
+          checkClassActivCity,
           badgeSelector,
           templateBadgeSelector,
         );
@@ -83,7 +85,7 @@ const addBadge = city => {
   createBadgesList(badges);
 }
 
-const deletBadge = city => {
+const deleteBadge = city => {
   if (city) {
     const index = badges.indexOf(city);
 
@@ -99,8 +101,15 @@ const deletBadge = city => {
   createBadgesList(badges);
 }
 
-addBadge();
-deletBadge();
+const checkClassActivCity = (city) => {
+  const listActiveCity = document.querySelectorAll('.popup__city-item_active');
+
+  listActiveCity.forEach(el => {
+    if (el.textContent === city) {
+      el.classList.remove('popup__city-item_active');
+    }
+  });
+}
 
 // рендер списка городов
 const popupLocation = new Popup(popupLocationSelector);
@@ -118,7 +127,7 @@ const createCityList = (data, value) => {
           value,
           areaList,
           addBadge,
-          deletBadge,
+          deleteBadge,
           itemCitySelector,
           templateCityListSelector,
         );

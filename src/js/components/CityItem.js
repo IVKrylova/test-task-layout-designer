@@ -1,5 +1,5 @@
 export default class CityItem {
-  constructor(item, value, areaList, handleAddBadge, handleDeletBadge, itemSelector, elementTemplateSelector) {
+  constructor(item, value, areaList, handleAddBadge, handleDeleteBadge, itemSelector, elementTemplateSelector) {
     this._itemSelector = itemSelector;
     this._elementTemplateSelector = elementTemplateSelector;
     this._name = item.name;
@@ -8,7 +8,7 @@ export default class CityItem {
     this._string = value;
     this._areaList = areaList;
     this._handleAddBadge = handleAddBadge;
-    this._handleDeletBadge = handleDeletBadge;
+    this._handleDeletBadge = handleDeleteBadge;
   }
 
   _getElementItem() {
