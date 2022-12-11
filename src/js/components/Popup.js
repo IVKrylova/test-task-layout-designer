@@ -1,9 +1,10 @@
 export default class Popup {
-  constructor(popupSelector, getActivCity) {
+  constructor(popupSelector, getActivCity, handleButtonSave) {
     this._elementPopup = document.querySelector(popupSelector);
     this._handleEscClose = this._handleEscClose.bind(this);
     this._buttonSave = this._elementPopup.querySelector('.popup__button');
     this._getActivCity = getActivCity;
+    this._handleButtonSave = handleButtonSave;
   }
 
   _handleEscClose = (evt) => {
@@ -23,10 +24,15 @@ export default class Popup {
   }
 
   getStateButtonSave() {
-    const activeCities = this._getActivCity()
+    const activeCities = this._getActivCity();
 
-    activeCities.length ? this._buttonSave.classList.add('popup__button_active')
-      : this._buttonSave.classList.remove('popup__button_active');
+    if (activeCities.length) {
+      this._buttonSave.classList.add('popup__button_active');
+      this._buttonSave.removeAttribute('disabled');
+    } else {
+      this._buttonSave.classList.remove('popup__button_active');
+      this._buttonSave.setAttribute('disabled', true);
+    }
   }
 
   setEventListeners() {
@@ -37,7 +43,10 @@ export default class Popup {
     });
 
     this._buttonSave.addEventListener('click', () => {
+      const activeCities = [];
 
+      this._getActivCity().forEach(el => activeCities.push(el.textContent));
+      this._handleButtonSave(activeCities);
     });
   }
 }

@@ -5,7 +5,7 @@ import Popup from './components/Popup.js';
 import CityItem from './components/CityItem.js';
 import SearchForm from './components/SearchForm.js';
 import Badge from './components/Badge.js';
-import { getCityList } from './modules/api.js';
+import { getCityList, sendActiveCities } from './modules/api.js';
 
 import {
   menuList,
@@ -118,8 +118,13 @@ const checkClassActivCity = (city) => {
   popupLocation.getStateButtonSave();
 }
 
+const handleButtonSave = cities => {
+  sendActiveCities(cities);
+  document.cookie = `activeCities=${JSON.stringify(cities)}`;
+}
+
 // рендер списка городов
-const popupLocation = new Popup(popupLocationSelector, getActivCity);
+const popupLocation = new Popup(popupLocationSelector, getActivCity, handleButtonSave);
 const cityList = [];
 const areaList = [];
 let isLoading = false;
