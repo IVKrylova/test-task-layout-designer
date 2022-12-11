@@ -83,6 +83,7 @@ const addBadge = city => {
   if (city) badges.push(city);
   badgesListElement.textContent = '';
   createBadgesList(badges);
+  popupLocation.getStateButtonSave();
 }
 
 const deleteBadge = city => {
@@ -99,20 +100,26 @@ const deleteBadge = city => {
   };
   badgesListElement.textContent = '';
   createBadgesList(badges);
+  popupLocation.getStateButtonSave();
+}
+
+const getActivCity = () => {
+  return document.querySelectorAll('.popup__city-item_active');
 }
 
 const checkClassActivCity = (city) => {
-  const listActiveCity = document.querySelectorAll('.popup__city-item_active');
+  const listActiveCity = getActivCity();
 
   listActiveCity.forEach(el => {
     if (el.textContent === city) {
       el.classList.remove('popup__city-item_active');
     }
   });
+  popupLocation.getStateButtonSave();
 }
 
 // рендер списка городов
-const popupLocation = new Popup(popupLocationSelector);
+const popupLocation = new Popup(popupLocationSelector, getActivCity);
 const cityList = [];
 const areaList = [];
 let isLoading = false;
@@ -146,6 +153,7 @@ location.addEventListener('click', () => {
   if (!isLoading) preloader.classList.add('preloader_visible');
   popupLocation.open();
   popupLocation.setEventListeners();
+  popupLocation.getStateButtonSave();
   if (cityList.length === 0) {
     getCityList()
       .then(res => {
