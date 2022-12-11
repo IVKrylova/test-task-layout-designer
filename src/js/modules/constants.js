@@ -29,3 +29,4 @@ export const location = document.querySelector('.location');
 export const preloader = document.querySelector('.preloader');
 export const cityListElement = document.querySelector('.popup__list-city');
 export const badgesListElement = document.querySelector('.popup__list-badge');
+export const popupContainer = document.querySelector('.popup__container');

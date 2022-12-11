@@ -24,6 +24,7 @@ import {
   templateBadgeSelector,
   badgesListSelector,
   badgesListElement,
+  popupContainer,
 } from './modules/constants.js';
 
 // сжимаем изображения
@@ -188,3 +189,11 @@ const getSearchCities = (searchCities, value) => {
 const searchCityForm = new SearchForm(formSearchCitySelector, cityList, getSearchCities);
 searchCityForm.setEventListener();
 getSearchCities();
+
+// позиционирование popup по location
+const locationPosition = location.getBoundingClientRect().left;
+popupContainer.style.left = `${locationPosition}px`;
+window.onresize = function() {
+  const locationPosition = location.getBoundingClientRect().left;
+  popupContainer.style.left = `${locationPosition}px`;
+}
