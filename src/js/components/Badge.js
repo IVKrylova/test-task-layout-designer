@@ -15,9 +15,9 @@ export default class Badge {
   }
 
   _setEventListeners() {
-    this._buttonClose.addEventListener('click', () => {
+    this._buttonClose.addEventListener('click', evt => {
       this._deleteBadge(this._item);
-      this._checkClassActivCity(this._item);
+      this._checkClassActivCity(evt.target);
     });
   }
 

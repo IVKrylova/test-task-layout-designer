@@ -6,6 +6,7 @@ import CityItem from './components/CityItem.js';
 import SearchForm from './components/SearchForm.js';
 import Badge from './components/Badge.js';
 import { getCityList, sendActiveCities } from './modules/api.js';
+import { getCityName } from './modules/utils.js';
 
 import {
   menuList,
@@ -108,14 +109,23 @@ const getActivCity = () => {
   return document.querySelectorAll('.popup__city-item_active');
 }
 
-const checkClassActivCity = (city) => {
+const checkClassActivCity = (target) => {
   const listActiveCity = getActivCity();
+  const el = target.closest('.badge');
+  const text = el.querySelector('.badge__text').textContent;
 
   listActiveCity.forEach(el => {
-    if (el.textContent === city) {
+    const name = getCityName(el);
+    const city = el.textContent;
+
+    if (city === text) {
+      el.classList.remove('popup__city-item_active');
+    }
+    if (name === text) {
       el.classList.remove('popup__city-item_active');
     }
   });
+
   popupLocation.getStateButtonSave();
 }
 
@@ -125,7 +135,7 @@ const handleButtonSave = cities => {
 }
 
 // рендер списка городов
-const popupLocation = new Popup(popupLocationSelector, getActivCity, handleButtonSave);
+const popupLocation = new Popup(popupLocationSelector, badges, handleButtonSave);
 const cityList = [];
 const areaList = [];
 let isLoading = false;
@@ -141,6 +151,7 @@ const createCityList = (data, value) => {
           areaList,
           addBadge,
           deleteBadge,
+          badges,
           itemCitySelector,
           templateCityListSelector,
         );

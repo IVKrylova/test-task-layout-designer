@@ -1,5 +1,5 @@
 export default class CityItem {
-  constructor(item, value, areaList, handleAddBadge, handleDeleteBadge, itemSelector, elementTemplateSelector) {
+  constructor(item, value, areaList, handleAddBadge, handleDeleteBadge, badges, itemSelector, elementTemplateSelector) {
     this._itemSelector = itemSelector;
     this._elementTemplateSelector = elementTemplateSelector;
     this._name = item.name;
@@ -9,6 +9,7 @@ export default class CityItem {
     this._areaList = areaList;
     this._handleAddBadge = handleAddBadge;
     this._handleDeletBadge = handleDeleteBadge;
+    this._badges = badges;
   }
 
   _getElementItem() {
@@ -64,6 +65,11 @@ export default class CityItem {
         this._element.innerHTML = newText;
       }
     }
+
+    // добавляем выделение выбранным городам
+    this._badges.forEach(name => {
+      if (name === this._name) this._element.classList.add('popup__city-item_active');
+    });
 
     this._setEvantListeners();
 

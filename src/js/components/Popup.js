@@ -1,9 +1,9 @@
 export default class Popup {
-  constructor(popupSelector, getActivCity, handleButtonSave) {
+  constructor(popupSelector, badges, handleButtonSave) {
     this._elementPopup = document.querySelector(popupSelector);
     this._handleEscClose = this._handleEscClose.bind(this);
     this._buttonSave = this._elementPopup.querySelector('.popup__button');
-    this._getActivCity = getActivCity;
+    this._badges = badges;
     this._handleButtonSave = handleButtonSave;
   }
 
@@ -24,9 +24,7 @@ export default class Popup {
   }
 
   getStateButtonSave() {
-    const activeCities = this._getActivCity();
-
-    if (activeCities.length) {
+    if (this._badges.length) {
       this._buttonSave.classList.add('popup__button_active');
       this._buttonSave.removeAttribute('disabled');
     } else {

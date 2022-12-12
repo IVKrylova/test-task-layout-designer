@@ -12,3 +12,17 @@ export const isWebp = () => {
     document.documentElement.classList.add(className);
   });
 }
+
+export const getCityName = elementCity => {
+  const city = elementCity.textContent;
+  const area = elementCity.querySelector('.popup__city-area');
+  let name;
+
+  if (area) {
+    const textArea = area.textContent;
+    const index = city.indexOf(textArea);
+    name = city.slice(0, index);
+  }
+
+  return name;
+}
