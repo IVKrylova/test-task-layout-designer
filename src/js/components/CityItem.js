@@ -38,27 +38,20 @@ export default class CityItem {
     if (this._string) {
       const string = this._string.toLowerCase();
       const name = this._name.toLowerCase();
-      const parts = name.split(string);
+      const i = name.indexOf(string);
+      const j = i + string.length;
+      let text;
 
-      // добавляем цвет буквам
-      const text = parts.join(`<span class="popup__cityString">${string}</span>`);
-      // добавляем заглавную букву после -
-      const textWithHyperhen = text.split('-')
-        .map((el, index) => {
-          if (index > 0) return el.replace(el[0], el[0].toUpperCase());
-          if (index === 0) return el;
-        }).join('-');
+      if (i === 0) {
+        text = `<span class="popup__cityString">${string[0].toUpperCase()}${string.slice(1, j)}</span>${this._name.slice(j)}`;
+      } else if ((name.indexOf('-') === i - 1) || (name.indexOf(' ') === i - 1)) {
+        text = `${this._name.slice(0, i)}<span class="popup__cityString">${string[0].toUpperCase()}${string.slice(1, j)}</span>${this._name.slice(j)}`;
+      } else {
+        text = `${this._name.slice(0, i)}<span class="popup__cityString">${string}</span>${this._name.slice(j)}`;
+      }
       // заменяем -На- => -на-
-      const newName = textWithHyperhen.replace('-На-', '-на-');
-      // добавляем заглавную букву в начале слова
-      const upperText = name.indexOf(string) === 0
-        ? `${newName.slice(0, 32)}${newName[32].toUpperCase()}${newName.slice(33)}`
-        : `${newName[0].toUpperCase()}${newName.slice(1)}`;
-      // добавляем заглавную букву после пробела
-      const index = upperText.indexOf(' <') + 33;
-      const newText = upperText.indexOf(' <') === -1
-        ? upperText
-        : `${upperText.slice(0, index)}${upperText[index].toUpperCase()}${upperText.slice(index + 1)}`;
+      const newName = text.replace('-<span class="popup__cityString">На</span>-', '-<span class="popup__cityString">на</span>-');
+
       // добавляем регион
       if (this._stateId) {
         let area;
@@ -66,10 +59,11 @@ export default class CityItem {
           if (el.id === this._stateId) area = el.name;
           return;
         });
-        const textWithArea = `${newText}<span class="popup__city-area">${area}</span>`
+
+        const textWithArea = `${newName}<span class="popup__city-area">${area}</span>`
         this._element.innerHTML = textWithArea;
       } else {
-        this._element.innerHTML = newText;
+        this._element.innerHTML = newName;
       }
     }
 
