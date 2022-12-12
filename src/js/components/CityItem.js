@@ -41,17 +41,24 @@ export default class CityItem {
       const parts = name.split(string);
 
       // добавляем цвет буквам
-      const text = parts.join(`<span class="popup__city-string">${string}</span>`);
+      const text = parts.join(`<span class="popup__cityString">${string}</span>`);
+      // добавляем заглавную букву после -
+      const textWithHyperhen = text.split('-')
+        .map((el, index) => {
+          if (index > 0) return el.replace(el[0], el[0].toUpperCase());
+          if (index === 0) return el;
+        }).join('-');
+      // заменяем -На- => -на-
+      const newName = textWithHyperhen.replace('-На-', '-на-');
       // добавляем заглавную букву в начале слова
       const upperText = name.indexOf(string) === 0
-        ? `${text.slice(0, 33)}${text[33].toUpperCase()}${text.slice(34)}`
-        : `${text[0].toUpperCase()}${text.slice(1)}`;
+        ? `${newName.slice(0, 32)}${newName[32].toUpperCase()}${newName.slice(33)}`
+        : `${newName[0].toUpperCase()}${newName.slice(1)}`;
       // добавляем заглавную букву после пробела
-      const index = upperText.indexOf(' <') + 34;
+      const index = upperText.indexOf(' <') + 33;
       const newText = upperText.indexOf(' <') === -1
         ? upperText
         : `${upperText.slice(0, index)}${upperText[index].toUpperCase()}${upperText.slice(index + 1)}`;
-
       // добавляем регион
       if (this._stateId) {
         let area;

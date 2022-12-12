@@ -114,14 +114,14 @@ const checkClassActivCity = (target) => {
   const el = target.closest('.badge');
   const text = el.querySelector('.badge__text').textContent;
 
+
+
+
   listActiveCity.forEach(el => {
     const name = getCityName(el);
     const city = el.textContent;
 
-    if (city === text) {
-      el.classList.remove('popup__city-item_active');
-    }
-    if (name === text) {
+    if (city === text || name === text) {
       el.classList.remove('popup__city-item_active');
     }
   });
